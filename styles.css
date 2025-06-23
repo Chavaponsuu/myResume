@@ -2,6 +2,7 @@
   --yellow: #f6d365;
   --black: #333;
   --white:#fff;
+  --blue:#007bff;
   --border:#8a8a8a;
 
 }
@@ -11,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: var(--white);
   color: #333;
 }
 *{
@@ -26,13 +27,24 @@ body {
   margin : 0 auto;
 }
 
-/* .hamburger{
-  color: var(--white);
+.hamburger{
+  color: var(--black);
   font-size: 1.5rem;
   cursor: pointer;
-  position: absolute;
-  right: 0;
+  position: fixed;
+  right: 2rem;
+  top:1rem;
+  transform: none;
+}
+.hamburger:hover{
+    transform: scale(1.1);
+  /* background: rgb(184, 46, 46); */
+}
+ /* .hamburger i {
+  font-size: 24px;
+  color: black;
 } */
+
 
 /* Header Section */
 header{
@@ -40,53 +52,140 @@ header{
   
   nav{
     margin: 0 ;
-     border-bottom: 2px solid var(--border);
+     /* border-bottom: 2px solid var(--border); */
+     padding: 10px;
   
     .nav-wrapper{
       position:relative;
       height: 50px;
       display: flex;
-      justify-content: center;
+      /* justify-content: center;
        
-      align-items: center;
-      h1{
+      align-items: center; */
+      /* h1{
         position: fixed;
-        left :50px
+        left :50px;
+        top:10px;
       }
-      
+      h1:hover{
+        color: var(--yellow);
+        cursor: pointer;
+        font-size: 30px;
+      }
+       */
+       h1 {
+        position: fixed;
+        left: 50px;
+        top: 10px;
+        font-size: 24px;
+        color: #333;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--white);
+        padding: 10px 20px;
+        border-radius: 12px;
+        /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+        transition: all 0.3s ease;
+        z-index: 1000;
+          }     
+
+h1:hover {
+  color: var(--blue); /* มี fallback เผื่อ var ไม่ได้กำหนด */
+  cursor: pointer;
+  font-size: 30px;
+  transform: translateY(-2px);
+  box-shadow: 20px 8px 20px rgba(0, 0, 0, 0.2);
+   background-color: rgba(0, 123, 255, 0.1);
+}
+
 
       .menu{
+        position: absolute;
         display: flex;
         list-style: none;
+        right: 100px;
         li{
+          top:10px;
           margin-left: 50px;
-          a{
-            color: var(--black);
-            text-decoration: none;
-          }
+          font-size: 20px;
+          
+          
+          /* a:hover::before {
+            left: 0;
+         } */
+         a {
+  display: inline-block;
+  color: var(--black, #333); /* fallback เผื่อไม่ได้กำหนดตัวแปร */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* เอฟเฟกต์ hover */
+a:hover {
+  transform: scale(1.1);
+  color:var(--blue );
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 123, 255, 0.1);
+}
+/* a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+a:hover::before {
+  width: 100%;
+} */
+
         }
       }
     }
   }
+
+  @media screen and (min-width:768px){
+    .hamburger{
+      display: none;
+    }
+    
+  }
   @media screen and (max-width:768px) {
     height: auto;
-    /* padding: 1rem 0 ; */
-
     nav{
-      /* margin-bottom: 1re,; */
       .nav-wrapper{
         flex-direction: column;
-        align-items: start;
+        /* align-items: start; */
+        align-items: center;
         height: auto;
          margin: 2rem 0 ;
-
-
+        .menu.show{
+          display: flex;
+        }
         .menu{
           display:none;
           flex-direction: column;
+          position: relative;
+          left: 25px;
+          /* text-align: center; */
+          justify-content: center;
+          align-items: center;
           li{
-            margin-left: 0;
+            /* text-align: center; */
+           
+            margin-left: 1rem;
             margin-top: 2rem;
+
+          }
+          h1{
+              
           }
           
         }
