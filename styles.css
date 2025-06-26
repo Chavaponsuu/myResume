@@ -4,6 +4,7 @@
   --white:#fff;
   --blue:#007bff;
   --border:#8a8a8a;
+ 
 
 }
 
@@ -28,6 +29,8 @@ body {
 }
 
 .hamburger{
+  width: 30px;
+
   color: var(--black);
   font-size: 1.5rem;
   cursor: pointer;
@@ -35,9 +38,21 @@ body {
   right: 2rem;
   top:1rem;
   transform: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+    transition: all 0.3s ease;
 }
 .hamburger:hover{
-    transform: scale(1.1);
+      /* transform: scale(1.5);
+      color: var(--blue);
+      background-color: rgba(0, 123, 255, 0.1);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); */
+      transform: scale(1.15);
+  color: var(--blue, #007bff);
+  /* background-color: rgba(0, 123, 255, 0.1); */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); */
+
   /* background: rgb(184, 46, 46); */
 }
  /* .hamburger i {
@@ -48,7 +63,8 @@ body {
 
 /* Header Section */
 header{
-  height: 800px;
+  height: 80px;
+  /* position: fixed; */
   
   nav{
     margin: 0 ;
@@ -59,20 +75,6 @@ header{
       position:relative;
       height: 50px;
       display: flex;
-      /* justify-content: center;
-       
-      align-items: center; */
-      /* h1{
-        position: fixed;
-        left :50px;
-        top:10px;
-      }
-      h1:hover{
-        color: var(--yellow);
-        cursor: pointer;
-        font-size: 30px;
-      }
-       */
        h1 {
         position: fixed;
         left: 50px;
@@ -91,10 +93,10 @@ header{
 h1:hover {
   color: var(--blue); /* มี fallback เผื่อ var ไม่ได้กำหนด */
   cursor: pointer;
-  font-size: 30px;
+  transform: scale(1.5);
   transform: translateY(-2px);
-  box-shadow: 20px 8px 20px rgba(0, 0, 0, 0.2);
-   background-color: rgba(0, 123, 255, 0.1);
+  /* box-shadow: 20px 8px 20px rgba(0, 0, 0, 0.2); */
+   /* background-color: rgba(0, 123, 255, 0.1); */
 }
 
 
@@ -125,12 +127,12 @@ h1:hover {
 
 /* เอฟเฟกต์ hover */
 a:hover {
-  transform: scale(1.1);
+  transform: tra;
   color:var(--blue );
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 123, 255, 0.1);
 }
-/* a::before {
+a::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -144,7 +146,7 @@ a:hover {
 
 a:hover::before {
   width: 100%;
-} */
+}
 
         }
       }
@@ -173,14 +175,14 @@ a:hover::before {
           display:none;
           flex-direction: column;
           position: relative;
-          left: 25px;
+          left: 30px;
           /* text-align: center; */
           justify-content: center;
           align-items: center;
           li{
             /* text-align: center; */
            
-            margin-left: 1rem;
+            margin-left: 0.5rem;
             margin-top: 2rem;
 
           }
@@ -195,5 +197,192 @@ a:hover::before {
   }
 }
 
+/* Profile Section */
 
 
+/* Enhanced Profile Section with Dynamic Background */
+/* Enhanced Profile Section with Dynamic Background */
+/* Enhanced Profile Section with Dynamic Background */
+.mydetail {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Animated floating elements */
+.mydetail::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Geometric pattern overlay */
+.mydetail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+  background-size: 30px 30px;
+  background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Container positioning */
+.mydetail .container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Profile wrapper with subtle glass effect */
+.detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile image enhancement */
+.detail-wrapper img {
+  height: 160px;
+  width: 160px;
+  /* object-fit: cover; */
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.detail-wrapper img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Text styling for clean white background */
+.detail-wrapper h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--black);
+  margin-top: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: none;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  color: #333;
+  text-shadow: none;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  text-shadow: none;
+  font-weight: 300;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .mydetail {
+    padding: 80px 15px;
+    min-height: 90vh;
+  }
+  
+  .detail-wrapper {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  
+  .detail-wrapper h1 {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+  
+  .detail-wrapper img {
+    height: 140px;
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mydetail {
+    padding: 60px 10px;
+  }
+  
+  .detail-wrapper {
+    padding: 25px 15px;
+  }
+  
+  .detail-wrapper h1 {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
