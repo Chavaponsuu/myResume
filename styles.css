@@ -7,6 +7,9 @@
  
 
 }
+ html {
+      scroll-behavior: smooth;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -76,7 +79,7 @@ header{
       height: 50px;
       display: flex;
        h1 {
-        position: fixed;
+        /* position: fixed; */
         left: 50px;
         top: 10px;
         font-size: 24px;
@@ -389,23 +392,185 @@ a:hover::before {
 }
 
 /* Myskills Section */
-
 .myskills {
-  padding: 100px;
-
-  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 120px 20px;
   text-align: center;
-  min-width: 100vh;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
 
+
+/* Floating background animation */
+/* .myskills::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  z-index: 0;
+} */
+
+/* .myskills::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+  background-size: 30px 30px;
+  opacity: 0.6;
+  z-index: 0;
+} */
+
+/* Main wrapper */
+.myskillwrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
   
 }
 
-.myskillwrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.myskillwrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-/* MySkills Section */
+.myskillwrapper h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.myskillwrapper p {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Technical Skills */
+.technical {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.programming-logo i {
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 20px;
+  color: #1e40af;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.programming-logo i:hover {
+  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Other Skills */
+.otherskills-icon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.otherskills-icon img {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.otherskills-icon img:hover {
+  transform: scale(1.25);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .myskills {
+    padding: 80px 15px;
+    min-height: 90vh;
+  }
+
+  .myskillwrapper {
+    padding: 40px 20px;
+  }
+
+  .myskillwrapper h2 {
+    font-size: 28px;
+  }
+
+  .myskillwrapper p {
+    font-size: 16px;
+  }
+
+  .programming-logo i,
+  .otherskills-icon img {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .myskills {
+    padding: 60px 10px;
+  }
+
+  .myskillwrapper {
+    padding: 30px 15px;
+  }
+
+  .myskillwrapper h2 {
+    font-size: 24px;
+  }
+
+  .myskillwrapper p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+} 
