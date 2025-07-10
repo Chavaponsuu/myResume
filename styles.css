@@ -574,3 +574,96 @@ a:hover::before {
     line-height: 1.6;
   }
 } 
+/* education section */
+.education{
+/* background: linear-gradient(135deg, #ffffff 0%, #f1f1f1 50%, #d9d9d9 100%); */
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  justify-content: center;
+  height: auto;
+  
+}
+/* .edu-wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+ 
+
+
+
+} */
+/* .edu-wrapper:hover{
+  transform: (-5px);
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.15);
+} */
+.education h2{
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+   /* margin-bottom: 60px; */
+}
+.school{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 600px;
+  min-height: 110px;
+  margin: 0 auto 25px auto;
+  text-align: left;
+  border-radius: 20px;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  background: rgba(255,255,255,0.7);
+}
+.date{
+
+  font-size: 13px;
+  color: #1e3a8a;
+  font-weight: 500;
+  margin-left: 24px;
+  margin-top: 2px;
+  white-space: nowrap;
+  align-self: flex-start;
+  position: static;
+  width: auto;
+  text-align: right;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .school {
+    width: 100%;
+    padding: 14px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .date {
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}
+
