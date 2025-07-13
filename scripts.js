@@ -10,7 +10,22 @@ document.querySelector(".hamburger").addEventListener("click" , function(){
 //     }
 // });
 
+// document.getElementById("darkModeToggle").addEventListener("click",function(){
+//     document.body.classList.toggle('darkmode');
+// })
 
+const toggle = document.getElementById("darkModeToggle");
+
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("darkmode");
+
+    // Change icon depending on mode
+    if (document.body.classList.contains("darkmode")) {
+      toggle.textContent = "☀️"; // Light mode icon
+    } else {
+      toggle.textContent = "🌙"; // Dark mode icon
+    }
+  });
 
 
 
